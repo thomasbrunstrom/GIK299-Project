@@ -25,10 +25,10 @@ namespace Tests
         {
             Assert.Multiple(() =>
             {
-                Assert.That(service.CalculateResistance(230, 10), Is.EqualTo(2300));
-                Assert.That(service.CalculateResistance(230, 16), Is.EqualTo(3680));
-                Assert.That(service.CalculateResistance(230, 24), Is.EqualTo(5520));
-                Assert.That(service.CalculateResistance(400, 36), Is.EqualTo(14400));
+                Assert.That(service.CalculateResistance(230, 10), Is.EqualTo(23));
+                Assert.That(service.CalculateResistance(230, 16), Is.EqualTo(14.375).Within(0.005));
+                Assert.That(service.CalculateResistance(230, 24), Is.EqualTo(9.58333).Within(0.005));
+                Assert.That(service.CalculateResistance(400, 36), Is.EqualTo(11.11111).Within(0.005));
             });
         }
 
@@ -110,10 +110,10 @@ namespace Tests
             Assert.Multiple(() =>
             {
                 Assert.That(service.ConvertCelciusToFahrenheit(0), Is.EqualTo(32));
-                Assert.That(service.ConvertCelciusToFahrenheit(20), Is.EqualTo(43.1111).Within(0.0005f));
-                Assert.That(service.ConvertCelciusToFahrenheit(-5), Is.EqualTo(29.2222214).Within(0.0005f));
-                Assert.That(service.ConvertCelciusToFahrenheit(-28), Is.EqualTo(16.4444447).Within(0.0005f));
-                Assert.That(service.ConvertCelciusToFahrenheit(520.25f), Is.EqualTo(321.027771f).Within(0.0005f));
+                Assert.That(service.ConvertCelciusToFahrenheit(20), Is.EqualTo(68).Within(0.0005f));
+                Assert.That(service.ConvertCelciusToFahrenheit(-5), Is.EqualTo(23).Within(0.0005f));
+                Assert.That(service.ConvertCelciusToFahrenheit(-28), Is.EqualTo(-18.4).Within(0.0005f));
+                Assert.That(service.ConvertCelciusToFahrenheit(520.25f), Is.EqualTo(968.45).Within(0.0005f));
             });
         }
 
